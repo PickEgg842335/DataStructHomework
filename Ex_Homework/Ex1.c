@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 typedef struct Node {
-	int data; 
+    int data; 
     struct Node *next;
 } Node;
 Node *head = NULL;
@@ -13,67 +13,75 @@ void delete(Node *ptr);
 Node *find(int value);
 void traverse(void);
 int length(void);
+void reverse(void);
 
 void main() {
-	append(54);
-	append(12);
-	append(30);
-	append(25);
-	Node *ptr = find(30);
-	insert(ptr, 67);
-	traverse();
-	printf("Have %d Nodes\n", length());
-	ptr = find(30);
-	delete(ptr);
-	traverse();
-	printf("Have %d Nodes\n", length());
+    append(54);
+    append(12);
+    append(30);
+    append(25);
+    Node *ptr = find(30);
+    insert(ptr, 67);
+    traverse();
+    printf("Have %d Nodes\n", length());
+    reverse();
+    traverse();
+    printf("Have %d Nodes\n", length());
+    reverse();
+    ptr = find(30);
+    delete(ptr);
+    traverse();
+    printf("Have %d Nodes\n", length());
+    reverse();
+    traverse();
+    printf("Have %d Nodes\n", length());
 }
 
 /* append tail Node with value */ 
 void append(int value) {
-	Node *newb = (Node*)malloc(sizeof(Node)); 
+    Node *newb = (Node*)malloc(sizeof(Node)); 
     newb->data= value;
-	newb->next = NULL;
-		
-	if (head == NULL) {
-		head = newb;
-	} else {
-		Node *p = head;
-		while (p->next != NULL) 
-			p = p->next;
-		p->next = newb;
-	}
+    newb->next = NULL;
+        
+    if (head == NULL) {
+        head = newb;
+    } else {
+        Node *p = head;
+        while (p->next != NULL) 
+            p = p->next;
+        p->next = newb;
+    }
 }
 
 /* insert a Node with value before ptr Node */ 
 void insert(Node *ptr, int value) {
-	Node *newb = (Node*)malloc(sizeof(Node)); 
+    Node *newb = (Node*)malloc(sizeof(Node)); 
     newb->data= value;
-	newb->next = NULL;
-	
-	if (ptr == NULL) { 
+    newb->next = NULL;
+    
+    if (ptr == NULL) { 
         append(value);
     } else {
-    	newb->next = ptr;
-		if (ptr == head)
-		    head = newb;
-		else {
-			Node *p = head;
-			while (p->next != ptr)
-				p = p->next;
-			p->next = newb;
-		}
-	}
+        newb->next = ptr;
+        if (ptr == head)
+            head = newb;
+        else {
+            Node *p = head;
+            while (p->next != ptr)
+                p = p->next;
+            p->next = newb;
+        }
+    }
 }
 
 void delete(Node *ptr) { 
     if (ptr == NULL) return;
-    if (ptr == head) { // ²Ä¤@ºØ±¡ªp: §R°£²Ä¤@­Ó¸`ÂI 
-    	head = head->next; 
+    if (ptr == head) { // ï¿½Ä¤@ï¿½Ø±ï¿½ï¿½p: ï¿½Rï¿½ï¿½ï¿½Ä¤@ï¿½Ó¸`ï¿½I 
+        head = head->next; 
     } else { 
-    	Node *p = head; 
-        while (p->next != ptr) // §ä¸`ÂIptrªº«e¸`ÂI
-        	p = p->next; 
+        Node *p = head; 
+        while (p->next != ptr) // ï¿½ï¿½`ï¿½Iptrï¿½ï¿½ï¿½eï¿½`ï¿½I
+            p = p->next; 
         p->next = ptr->next;
     }
     free(ptr);
@@ -83,31 +91,53 @@ Node *find(int value) {
     Node *p = head;
     while (p != NULL) {
         if (p->data == value) 
-        	return p; 
-       	p = p->next;
-	}		
+            return p; 
+           p = p->next;
+    }		
     return p; 
 }
 
 void traverse() {
     printf("[");
-	Node *p = head;
-	while (p != NULL) {
-		if (p == head)
-			printf("%d", p->data);
-		else
-    		printf(",%d", p->data);
-		p = p->next;
-	}
-	printf("]\n");
+    Node *p = head;
+    while (p != NULL) {
+        if (p == head)
+            printf("%d", p->data);
+        else
+            printf(",%d", p->data);
+        p = p->next;
+    }
+    printf("]\n");
 }
 
 int length() { 
-	int count = 0; 
+    int count = 0; 
     Node *p = head; 
     while (p != NULL) { 
-		count++;
-		p = p->next;
-	} 
+        count++;
+        p = p->next;
+    } 
     return count; 
 }
+
+void reverse(void)
+{
+    Node *p = head;
+    Node *pPrev = NULL;
+
+    while (p != NULL) 
+    {
+        if (p->next == NULL)
+        {
+            p = p->next;
+            head->next = pPrev;
+        }
+        else
+        {
+            p = p->next;
+            head->next = pPrev;
+            pPrev = head;
+            head = p;
+        }
+    }
+} 
