@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <stdbool.h>
 
 const int wBanknoteItem[7] = {1000, 500, 100, 50, 10, 5, 1};
 
@@ -13,17 +11,12 @@ typedef struct ChangeItem
 
 int sfInputPayable(void);
 int sChangeCalforPay(int wPay, strChangeItem *strChangel);
-//void sfInputArrayByBubbleChk(int wInputArrayLength, int *pInputArray);
-//void sfInputArrayBySelectionChk(int wInputArrayLength, int *pInputArray);
-//void sfInputArrayByInsertionChk(int wInputArrayLength, int *pInputArray);
 
 void main()
 {
     int wPayablePrice = 0;
     int wPaybillType = 0; 
     strChangeItem strMyChangelist;
-//    int wRandRange = 11;     
-//    int wInputNumLength = sizeof(wInputNum) / sizeof(wInputNum[0]);
 
     wPayablePrice = sfInputPayable();
     wPaybillType = sChangeCalforPay(wPayablePrice, &strMyChangelist);
