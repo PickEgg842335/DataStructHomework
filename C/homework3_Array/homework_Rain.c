@@ -157,8 +157,8 @@ void sfInputCmdChk(StrInputCmd *StrCmd)
     StrCmd->wInputType = wInputTypeTemp;
     for(int i = 0; i < wCmdlistLength; i++)
     {
-        wInputMatchChk = strspn(bInputCmd, bInputCmdlist[i]);
-        if(wInputMatchChk == strlen(bInputCmdlist[i]))
+        wInputMatchChk = strncmp(bInputCmdlist[i], bInputCmd, strlen(bInputCmdlist[i]));
+        if((wInputMatchChk == 0) && (strlen(bInputCmd) == strlen(bInputCmdlist[i])))
         {
             wInputTypeTemp = i;
             break;
