@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="UTF-8">
+        <title>homework_Electricity</title>
+        <link rel="stylesheet" href="./css/Style1.css">
+        <script src="./js/ElectricityProcess.js"></script>
+    </head>
+    <body>
+        <form>
+            <fieldset class="classField1">
+                <div class="classDivTitle">
+                    <h2>Electricity</h2>
+                </div>
+                <div class="classDivCenter">
+                    <div class="classDiv1CenterL1">
+                        <div class="classDiv11CenterL2">
+                            <span>
+                                <label for="idInputElectType">用電種類:</label>
+                                <select id="idInputElectType">
+                                    <option value="0">請選擇</option>
+                                    <option value="1">非營業用電</option>
+                                    <option value="2">營業用電</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="classDiv12CenterL2">
+                            <span>
+                                <label for="idInputElectMonth">用電月份:</label>
+                                <select id="idInputElectMonth">
+                                    <option value="0">請選擇</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="classDiv13CenterL2">
+                            <span>
+                                <label for="idInputElectDegree">用電度數輸入欄:</label>
+                                <input class="classInputElectDegree" type="number" id="idInputElectDegree" min="0" max="100000" value="0" onkeydown="if(event.keyCode==13){return false;}">
+                                <!-- <input class="classInputElectDegree" type="number" id="idInputElectDegree" min="0" max="100000" value="0"> -->
+                            </span>
+                        </div>
+                        <div class="classDiv13CenterL2">
+                            <span>
+                                <input class="classCalElectPrice" type="button" id="idCalElectPrice" value="計算">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="classDiv2CenterL1">
+                        <span id="idElectMsg">
+                            訊息
+                        </span>
+                    </div>
+                </div>
+                <div class="classDivBottom">
+                    <p>&copy2024 All Rights Reserved</p>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
