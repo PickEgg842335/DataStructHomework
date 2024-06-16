@@ -24,13 +24,13 @@ window.onload = function()
     let ObjMySalary = new ObjSalary();
 
     sfGetInputHrValueCheck(ObjSalaryCal.ObjInput);
-    sfOutputSeasonMsg(ObjSalaryCal.ObjSalaryMsg, ObjMySalary);
+    sfOutputSalaryMsg(ObjSalaryCal.ObjSalaryMsg, ObjMySalary);
     ObjSalaryCal.ObjInput.ObjInputhour.addEventListener("change", function(){
         sfGetInputHrValueCheck(ObjSalaryCal.ObjInput);
     });
     ObjSalaryCal.ObjInput.ObjCalButton.addEventListener("click", function(){
         sfSalaryCal(ObjSalaryCal, ObjMySalary);
-        sfOutputSeasonMsg(ObjSalaryCal.ObjSalaryMsg, ObjMySalary);
+        sfOutputSalaryMsg(ObjSalaryCal.ObjSalaryMsg, ObjMySalary);
     });
 }
 
@@ -82,7 +82,7 @@ function sfSalaryCal(ObjSalaryCal, ObjPersonSalary)
 }
 
 
-function sfOutputSeasonMsg(ObjSalaryMsg, ObjPersonSalary)
+function sfOutputSalaryMsg(ObjSalaryMsg, ObjPersonSalary)
 {
     let PersonWorkHr = ObjPersonSalary.NumWorkHour;
     let PersonTotalSalary = ObjPersonSalary.NumTotalSalary;
