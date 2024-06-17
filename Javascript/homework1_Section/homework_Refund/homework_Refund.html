@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="UTF-8">
+        <title>homework_Refund</title>
+        <link rel="stylesheet" href="./css/Style1.css">
+        <script src="./js/RefundProcess.js"></script>
+    </head>
+    <body>
+        <form>
+            <fieldset class="classField1">
+                <div class="classDivTitle">
+                    <h2>Refund</h2>
+                </div>
+                <div class="classDivCenter">
+                    <div class="classDiv1CenterL1">
+                        <div class="classDiv11CenterL2">
+                            <span>
+                                <label class="classRandPay" id="idLabRandPay">您的應付金額為<span id="idSpRandPay">0</span>元</label>
+                                <input class="classRandPay" type="button" id="idButRandPay" value="取得付款額">
+                            </span>
+                        </div>
+                        <div class="classDiv12CenterL2">
+                            <span>
+                                <label for="idInputRealPay">實付金額輸入欄:</label>
+                                <input class="classInputRealPay" type="number" id="idInputRealPay" min="0" max="10000" value="0" disabled="true" onkeydown="if(event.keyCode==13){return false;}">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="classDiv2CenterL1">
+                        <span id="idChangeMsg">
+                            訊息
+                        </span>
+                    </div>
+                </div>
+                <div class="classDivBottom">
+                    <p>&copy2024 All Rights Reserved</p>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
