@@ -45,7 +45,7 @@ void sEquationCal(strEqsolution *strEqsolut)
     printf("請輸入二元二次方程式ax^2+bx+c=0,a,b,c三個常數項:");
     winputKeyinChk = scanf("%f %f %f", &fInputValue[0], &fInputValue[1], &fInputValue[2]);
     
-    if(winputKeyinChk != 3)
+    if((winputKeyinChk != 3) || (fInputValue[0] == 0))
     {
         strEqsolut->wSolutionType = -1;
     }

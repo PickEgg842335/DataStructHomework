@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="UTF-8">
+        <title>homework_Equation</title>
+        <link rel="stylesheet" href="./css/Style1.css">
+        <script src="./js/EquationProcess.js"></script>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+        </script>
+    </head>
+    <body>
+        <form>
+            <fieldset class="classField1">
+                <div class="classDivTitle">
+                    <h2>Equation</h2>
+                </div>
+                <div class="classDivCenter">
+                    <div class="classDiv1CenterL1">
+                        <span>
+                            <label for="idInputEqa">a:</label>
+                            <input class="classInputEq" type="number" id="idInputEqa" value="0" onkeydown="if(event.keyCode==13){return false;}">
+                            <label for="idInputEqb">b:</label>
+                            <input class="classInputEq" type="number" id="idInputEqb" value="0" onkeydown="if(event.keyCode==13){return false;}">
+                            <label for="idInputEqc">c:</label>
+                            <input class="classInputEq" type="number" id="idInputEqc" value="0" onkeydown="if(event.keyCode==13){return false;}">
+                            <input class="classInputEqBtn" type="button" id="idCalEq" value="計算" disabled="true">
+                        </span>
+                    </div>
+                    <div class="classDiv2CenterL1">
+                        <span id="idEqMsg">
+                            訊息`x2`
+                        </span>
+                    </div>
+                </div>
+                <div class="classDivBottom">
+                    <p>&copy2024 All Rights Reserved</p>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
